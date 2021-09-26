@@ -20,7 +20,8 @@ public class PacMan{
 	}
 
 	public boolean move() {
-		return false;
+		int test = 0;
+		return (test == 0)? true: false;
 	}
 
 	public boolean is_ghost_in_range() { 
