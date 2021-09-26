@@ -19,9 +19,22 @@ public class PacMan{
 		return null;	
 	}
 
+	/*TODO: check if we need to create getters for Location.java (x & y)*/
 	public boolean move() {
-		int test = 0;
-		return (test == 0)? true: false;
+		ArrayList<Location> moveChoices = get_valid_moves();
+		if (moveChoices != null && !moveChoices.isEmpty()) {
+			// Move at random
+			int sz = moveChoices.size();
+			int rand = (int) Math.floor(Math.random() *(sz + 1));
+			
+			Location selected = moveChoices.get(rand);
+			
+			this.myLoc.shift(selected.x, selected.y);
+		
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public boolean is_ghost_in_range() { 
