@@ -17,7 +17,20 @@ public class Ghost{
 	}
 
 	public boolean move() {
-		return false;
+		ArrayList<Location> moveChoices = get_valid_moves();
+		if (moveChoices != null && !moveChoices.isEmpty()) {
+			// Move at random
+			int sz = moveChoices.size();
+			int rand = (int) Math.floor(Math.random() *(sz + 1));
+			
+			Location selected = moveChoices.get(rand);
+			
+			this.myLoc.shift(selected.x, selected.y);
+		
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public boolean is_pacman_in_range() { 
