@@ -16,7 +16,7 @@ public class PacMan{
 
 	public ArrayList<Location> get_valid_moves() {
 		
-		// in dimensions of board and not a wall
+		// not a wall
 		int x = this.myLoc.x;
 		int y = this.myLoc.y;
 		ArrayList<Location> rv = new ArrayList<Location>();
@@ -28,7 +28,7 @@ public class PacMan{
 			rv.add(new Location( x ,y-1));
 		}
 		if ( !myMap.getLoc(new Location(x+1,y-1)).contains(Map.Type.WALL) ) {
-			rv.add(new Location(x+1,y-1));
+			rv.add(new Location(x+1,y-1)); 
 		}
 		if ( !myMap.getLoc(new Location(x-1, y )).contains(Map.Type.WALL) ) {
 			rv.add(new Location(x-1, y ));
@@ -45,7 +45,7 @@ public class PacMan{
 		if ( !myMap.getLoc(new Location(x+1,y+1)).contains(Map.Type.WALL) ) {
 			rv.add(new Location(x+1,y+1));
 		}
-		
+
 		return rv;	
 	}
 
