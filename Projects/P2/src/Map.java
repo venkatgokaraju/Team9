@@ -64,7 +64,17 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
+		if(Name == null || Name.length() == 0){
+			return false;
+		}
+		if(!((Name == "clyde") || (Name == "blinky") || (Name == "inky") || (Name == "pinky"))){
+			return false;
+		}
+		Location p1 = locations.get("pacman");
+		Location g1 = locations.get(Name);
+		if((Math.abs(p1.x-g1.x) <= 1) && (Math.abs(p1.y-g1.y) <= 1)){
+			return true;
+		} 
 		return false;
 	}
 	
