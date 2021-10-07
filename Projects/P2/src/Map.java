@@ -53,79 +53,7 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
-		//update locations, components, and field
-		//use the setLocation method for the component to move it to the new location
-		
-		/*
-		name of object, destination, type of named object
-
-		locations: name of object mapped to locations
-		components: name of object mapped to JComponent
-
-		use component to set the location
-		setLocation() in pacman/ghost Component classes
-
-		1) remove type from field at current location
-		2) add type to field at new location (passed in)
-
-		3) use component's setLocation() to set location to new location
-
-		4) remove name and location from locations hashmap
-		5) add name and locaiton to locations hashmap
-
-		*/
-
-		Location startLoc = locations.get(name);
-		if (type == Map.Type.PACMAN) {
-			PacMan p = new PacMan(name, startLoc, this);
-			if (p.get_valid_moves().contains(loc)) {
-				// remove type from start location in field
-				// add type to new location in field
-				field.get(startLoc).remove(type);
-				if (field.get(loc) != null) {
-					field.get(loc).add(type);
-				}
-				else {
-					HashSet<Type> temp = new HashSet<Type>();
-					temp.add(type);
-					field.put(loc, temp);
-				}
-
-				// setLocation() to new location in components
-				components.get(name).setLocation(loc.x, loc.y);
-
-				// remove start location associated with name from locations
-				// add (name, new location) pair to locations
-				locations.remove(name);
-				locations.put(name, loc);
-				return true;
-			}
-		}
-		else if (type == Map.Type.GHOST) {
-			Ghost g = new Ghost(name, startLoc, this);
-			if (g.get_valid_moves().contains(loc)) {
-				// remove type from start location in field
-				// add type to new location in field
-				field.get(startLoc).remove(type);
-				if (field.get(loc) != null) {
-					field.get(loc).add(type);
-				}
-				else {
-					HashSet<Type> temp = new HashSet<Type>();
-					temp.add(type);
-					field.put(loc, temp);
-				}
-				// setLocation to new location in components
-				components.get(name).setLocation(loc.x, loc.y);
-
-				// remove start location associated with name from locations
-				// add (name, new location) pair to locations
-				locations.remove(name);
-				locations.put(name, loc);
-				return true;
-			}
-		}
-		return false;
+		return null;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
@@ -153,6 +81,9 @@ public class Map{
 		Location p1 = locations.get("pacman");
 		Location g1 = locations.get(Name);
 		if((Math.abs(p1.x-g1.x) <= 1) && (Math.abs(p1.y-g1.y) <= 1)){
+			components.remove("pacman");
+			locations.remove("pacman");
+			field.get(p1).remove(Map.Type.PACMAN);
 			return true;
 		} 
 		return false;
