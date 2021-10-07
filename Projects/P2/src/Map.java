@@ -12,12 +12,12 @@ public class Map{
 		COOKIE		
 	}
 	
-	public HashMap<Location, HashSet<Type>> field;
+	private HashMap<Location, HashSet<Type>> field;
 	private boolean gameOver;
 	private int dim;
 
-	public HashMap<String, Location> locations;
-	public HashMap<String, JComponent> components; 
+	private HashMap<String, Location> locations;
+	private HashMap<String, JComponent> components; 
 	private HashSet<Type> emptySet;
 	private HashSet<Type> wallSet; 
 
