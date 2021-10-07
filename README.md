@@ -12,9 +12,8 @@ TestGhostInRange: This Junit teste class tests various cases regarding the is_gh
 
 Ghost - is_pacman_in_range(): This function return true if pacman is in range of the specified ghosts coordinates, and false otherwise. A ghost being in range means that pacman is either one space to the left, right, below, above, or diagonal to the specified ghost's coordinates.
 
-
 TestPacManInRange: This Junit teste class tests various cases regarding the is_pacman_in_range() method. It checks the cases where pacman is horizontal to a ghost and in range, vertical to a ghost and in range, and diagonal to a ghost and in range. It also tests the cases where the pacman is slightly out of range and the case where pacman is very out of range. These tests are performed for the case where there is only one ghost, and the case where there are multiple ghosts. 
 
-Map - attack(): 
+Map - attack(): This method checks if the specified ghost can attack pacman. The ghost can attack pacman if pacman is 1 space left, right, above, below, or diagonal to the ghost. If the ghost can attack pacman return true, otherwise return false. 
 
-TestMapAttack: 
+TestMapAttack: This method performs various tests on the attack() method in map class. It checks the cases where pacman is horizontal to a ghost and in range, vertical to a ghost and in range, and diagonal to a ghost and in range. It also tests the cases where the pacman is slightly out of range and the case where pacman is very out of range. These tests are performed for the case where there is only one ghost, and the case where there are multiple ghosts. 
