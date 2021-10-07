@@ -126,11 +126,6 @@ public class Map{
 			}
 		}
 		return false;
-		// if (( type == Map.Type.PACMAN && p.get_valid_moves().contains(loc) ) ||
-		// ( type == Map.Type.GHOST && g.get_valid_moves().contains(loc) )) {
-			
-		// }
-		// else return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
