@@ -55,7 +55,6 @@ public class TestPacManInRange extends TestCase {
 		Ghost ghost1 = new Ghost("clyde", g1, map1);
 		return  ghost1.is_pacman_in_range();
 	}
-
 	public static boolean test2Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
