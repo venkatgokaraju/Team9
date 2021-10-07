@@ -176,43 +176,43 @@ public class TestGhostInRange extends TestCase {
 		return pac1.is_ghost_in_range();
 	}
 
-	public void testPacManInRange1() throws FileNotFoundException{
+	public void testGhostInRange1() throws FileNotFoundException{
 		assertTrue(result1 == true);
 	}
-	public void testPacManInRange2() throws FileNotFoundException{
+	public void testGhostInRange2() throws FileNotFoundException{
 		assertTrue(result2 == false);
 	}
-	public void testPacManInRange3() throws FileNotFoundException{
+	public void testGhostInRange3() throws FileNotFoundException{
 		assertTrue(result3 == true);
 	}
-	public void testPacManInRange4() throws FileNotFoundException{
+	public void testGhostInRange4() throws FileNotFoundException{
 		assertTrue(result4 == true);
 	}
-	public void testPacManInRange5() throws FileNotFoundException{
+	public void testGhostInRange5() throws FileNotFoundException{
 		assertTrue(result5 == true);
 	}
-	public void testPacManInRange6() throws FileNotFoundException{
+	public void testGhostInRange6() throws FileNotFoundException{
 		assertTrue(result6 == true);
 	}
-	public void testPacManInRange7() throws FileNotFoundException{
+	public void testGhostInRange7() throws FileNotFoundException{
 		assertTrue(result7 == true);
 	}
-	public void testPacManInRange8() throws FileNotFoundException{
+	public void testGhostInRange8() throws FileNotFoundException{
 		assertTrue(result8 == true);
 	}
-	public void testPacManInRange9() throws FileNotFoundException{
+	public void testGhostInRange9() throws FileNotFoundException{
 		assertTrue(result9 == false);
 	}
-	public void testPacManInRange10() throws FileNotFoundException{
+	public void testGhostInRange10() throws FileNotFoundException{
 		assertTrue(result10 == false);
 	}
-	public void testPacManInRange11() throws FileNotFoundException{
+	public void testGhostInRange11() throws FileNotFoundException{
 		assertTrue(result11 == false);
 	}
-	public void testPacManInRange12() throws FileNotFoundException{
+	public void testGhostInRange12() throws FileNotFoundException{
 		assertTrue(result12 == false);
 	}
-	public void testPacManInRange13() throws FileNotFoundException{
+	public void testGhostInRange13() throws FileNotFoundException{
 		assertTrue(result13 == false);
 	}
 }
