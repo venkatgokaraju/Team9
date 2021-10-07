@@ -12,12 +12,12 @@ public class Map{
 		COOKIE		
 	}
 	
-	private HashMap<Location, HashSet<Type>> field;
+	public HashMap<Location, HashSet<Type>> field;
 	private boolean gameOver;
 	private int dim;
 
-	private HashMap<String, Location> locations;
-	private HashMap<String, JComponent> components; 
+	public HashMap<String, Location> locations;
+	public HashMap<String, JComponent> components; 
 	private HashSet<Type> emptySet;
 	private HashSet<Type> wallSet; 
 
@@ -73,6 +73,9 @@ public class Map{
 		Location p1 = locations.get("pacman");
 		Location g1 = locations.get(Name);
 		if((Math.abs(p1.x-g1.x) <= 1) && (Math.abs(p1.y-g1.y) <= 1)){
+			components.remove("pacman");
+			locations.remove("pacman");
+			field.get(p1).remove(Map.Type.PACMAN);
 			return true;
 		} 
 		return false;
