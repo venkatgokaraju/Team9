@@ -10,7 +10,7 @@ public class TestPacManMove extends TestCase {
 
 	
 	public void init() throws FileNotFoundException {
-		NoFrame frame = new NoFrame();
+//		NoFrame frame = new NoFrame();
 
 //		MainFrame frame = new MainFrame();
 	}
