@@ -15,8 +15,39 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
+		// Liam Code
+		int x = this.myLoc.x;
+		int y = this.myLoc.y;
+		ArrayList<Location> rv = new ArrayList<Location>();
+
+		if ( !myMap.getLoc(new Location(x-1,y-1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x-1,y-1));
+		}
+		if ( !myMap.getLoc(new Location( x ,y-1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location( x ,y-1));
+		}
+		if ( !myMap.getLoc(new Location(x+1,y-1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x+1,y-1)); 
+		}
+		if ( !myMap.getLoc(new Location(x-1, y )).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x-1, y ));
+		}
+		if ( !myMap.getLoc(new Location(x+1, y )).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x+1, y ));
+		}
+		if ( !myMap.getLoc(new Location(x-1,y+1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x-1,y+1));
+		}
+		if ( !myMap.getLoc(new Location( x ,y+1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location( x ,y+1));
+		}
+		if ( !myMap.getLoc(new Location(x+1,y+1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x+1,y+1));
+		}
+
+		return rv;	
 		
-		return null;	
+//		return null;	
 	}
 
 	/*TODO: check if we need to create getters for Location.java (x & y)*/
