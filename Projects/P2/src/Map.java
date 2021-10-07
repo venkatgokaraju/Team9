@@ -55,12 +55,23 @@ public class Map{
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
+		
 		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		return null;
+		if (loc.x > dim || loc.y > dim){
+			return wallSet;
+		}
+		if (field.containsKey(loc)){
+			if (field.get(loc).size() > 0){
+				return field.get(loc);
+			} else{
+				return emptySet;
+			}
+		}
+		return emptySet;
 	}
 
 	public boolean attack(String Name) {
