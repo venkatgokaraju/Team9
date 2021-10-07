@@ -263,5 +263,5 @@ public class TestMapAttack extends TestCase {
 	}
 	public void testMapAttack16() throws FileNotFoundException{
 		assertTrue(result16 == false);
-	}
+  }
 }
