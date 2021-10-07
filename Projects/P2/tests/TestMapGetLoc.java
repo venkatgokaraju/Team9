@@ -6,12 +6,21 @@ import java.io.*;
 public class TestMapGetLoc {
 	
 	public void testMapGetLoc() {
-		Mainframe frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
-		Ghost ghost = frame.addGhost(new Location(x, y), "name", Color.red); //Creates a red ghost named "name" at location x,y
-		frame.initPlayers(); //Creates all of the players
-		frame.startGame();
+		NoFrame frame1 = new NoFrame();
+		Location p1 = new Location(10,10);
+		Location g1 = new Location(11,11);
+		Location c1 = new Location(1,5);
+		Location w1 = new Location(30,30);
+		Location e1 = new Location(2, 5);
 
+		frame1.addPacMan(p1);
+		frame1.addGhost(g1, "clyde", Color.red);
 
+		Map map1 = frame1.getMap();
+		Ghost ghost1 = new Ghost("clyde", g1, map1);
+		PacMan pacman1 = new PacMan("boo", p1, map1);
+
+		System.out.println(map1.getLoc(p1));
 
 	}
 }
