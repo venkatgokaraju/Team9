@@ -45,8 +45,8 @@ public class TestGhostInRange extends TestCase {
 		frame1.addGhost(g3, "pinky", Color.red);
 		frame1.addGhost(g4, "inky", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return  pac1.is_ghost_in_range();
 	}
 
 	public static boolean test2Setup() throws Exception{
@@ -62,28 +62,28 @@ public class TestGhostInRange extends TestCase {
 		frame1.addGhost(g3, "pinky", Color.red);
 		frame1.addGhost(g4, "inky", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test3Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(9,9);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "blinky", Color.red);
+		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("blinky", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test4Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(9,10);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "inky", Color.red);
+		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("inky", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test5Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -92,8 +92,8 @@ public class TestGhostInRange extends TestCase {
 		frame1.addPacMan(p1);
 		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test6Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -102,8 +102,8 @@ public class TestGhostInRange extends TestCase {
 		frame1.addPacMan(p1);
 		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test7Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -112,18 +112,18 @@ public class TestGhostInRange extends TestCase {
 		frame1.addPacMan(p1);
 		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test8Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(10,11);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "pinky", Color.red);
+		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("pinky", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test9Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -132,8 +132,8 @@ public class TestGhostInRange extends TestCase {
 		frame1.addPacMan(p1);
 		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test10Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -142,8 +142,8 @@ public class TestGhostInRange extends TestCase {
 		frame1.addPacMan(p1);
 		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test11Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -152,8 +152,8 @@ public class TestGhostInRange extends TestCase {
 		frame1.addPacMan(p1);
 		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test12Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -162,8 +162,8 @@ public class TestGhostInRange extends TestCase {
 		frame1.addPacMan(p1);
 		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 	public static boolean test13Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -172,48 +172,50 @@ public class TestGhostInRange extends TestCase {
 		frame1.addPacMan(p1);
 		frame1.addGhost(g1, "clyde", Color.red);
 		Map map1 = frame1.getMap();
-		Ghost ghost1 = new Ghost("clyde", p1, map1);
-		return  ghost1.is_pacman_in_range();
+		PacMan pac1 = new PacMan("name", p1, map1);
+		return pac1.is_ghost_in_range();
 	}
 
-	public void testGhostInRange1() throws FileNotFoundException{
+	public void testPacManInRange1() throws FileNotFoundException{
 		assertTrue(result1 == true);
 	}
-	public void testGhostInRange2() throws FileNotFoundException{
+	public void testPacManInRange2() throws FileNotFoundException{
 		assertTrue(result2 == false);
 	}
-	public void testGhostInRange3() throws FileNotFoundException{
+	public void testPacManInRange3() throws FileNotFoundException{
 		assertTrue(result3 == true);
 	}
-	public void testGhostInRange4() throws FileNotFoundException{
+	public void testPacManInRange4() throws FileNotFoundException{
 		assertTrue(result4 == true);
 	}
-	public void testGhostInRange5() throws FileNotFoundException{
+	public void testPacManInRange5() throws FileNotFoundException{
 		assertTrue(result5 == true);
 	}
-	public void testGhostInRange6() throws FileNotFoundException{
+	public void testPacManInRange6() throws FileNotFoundException{
 		assertTrue(result6 == true);
 	}
-	public void testGhostInRange7() throws FileNotFoundException{
+	public void testPacManInRange7() throws FileNotFoundException{
 		assertTrue(result7 == true);
 	}
-	public void testGhostInRange8() throws FileNotFoundException{
+	public void testPacManInRange8() throws FileNotFoundException{
 		assertTrue(result8 == true);
 	}
-	public void testGhostInRange9() throws FileNotFoundException{
+	public void testPacManInRange9() throws FileNotFoundException{
 		assertTrue(result9 == false);
 	}
-	public void testGhostInRange10() throws FileNotFoundException{
+	public void testPacManInRange10() throws FileNotFoundException{
 		assertTrue(result10 == false);
 	}
-	public void testGhostInRange11() throws FileNotFoundException{
+	public void testPacManInRange11() throws FileNotFoundException{
 		assertTrue(result11 == false);
 	}
-	public void testGhostInRange12() throws FileNotFoundException{
+	public void testPacManInRange12() throws FileNotFoundException{
 		assertTrue(result12 == false);
 	}
-	public void testGhostInRange13() throws FileNotFoundException{
+	public void testPacManInRange13() throws FileNotFoundException{
 		assertTrue(result13 == false);
 	}
 }
+
+
 
