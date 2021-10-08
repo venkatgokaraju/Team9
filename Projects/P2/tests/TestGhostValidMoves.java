@@ -4,11 +4,7 @@ import java.io.*;
 
 public class TestGhostValidMoves extends TestCase {
 
-	boolean result1;
-	boolean result2;
-	boolean result3;
-	boolean result4;
-	boolean result5;
+	public void testGhostValidMoves() throws FileNotFoundException{
 
 	protected void setUp() throws Exception  {
 		result1 = test1Setup();
