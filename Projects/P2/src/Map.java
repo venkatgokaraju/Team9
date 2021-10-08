@@ -56,6 +56,56 @@ public class Map{
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 		
+		Location startLoc = locations.get(name);
+		if (type == Map.Type.PACMAN) {
+			PacMan p = new PacMan(name, startLoc, this);
+			if (p.get_valid_moves().contains(loc)) {
+				// remove type from start location in field
+				// add type to new location in field
+				field.get(startLoc).remove(type);
+				if (field.get(loc) != null) {
+					field.get(loc).add(type);
+				}
+				else {
+					HashSet<Type> temp = new HashSet<Type>();
+					temp.add(type);
+					field.put(loc, temp);
+				}
+
+				// setLocation() to new location in components
+				components.get(name).setLocation(loc.x, loc.y);
+
+				// remove start location associated with name from locations
+				// add (name, new location) pair to locations
+				locations.remove(name);
+				locations.put(name, loc);
+				return true;
+			}
+		}
+		else if (type == Map.Type.GHOST) {
+			Ghost g = new Ghost(name, startLoc, this);
+			if (g.get_valid_moves().contains(loc)) {
+				// remove type from start location in field
+				// add type to new location in field
+				field.get(startLoc).remove(type);
+				if (field.get(loc) != null) {
+					field.get(loc).add(type);
+				}
+				else {
+					HashSet<Type> temp = new HashSet<Type>();
+					temp.add(type);
+					field.put(loc, temp);
+				}
+				// setLocation to new location in components
+				components.get(name).setLocation(loc.x, loc.y);
+
+				// remove start location associated with name from locations
+				// add (name, new location) pair to locations
+				locations.remove(name);
+				locations.put(name, loc);
+				return true;
+			}
+		}
 		return false;
 	}
 	
