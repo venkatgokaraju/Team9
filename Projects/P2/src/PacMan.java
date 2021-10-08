@@ -16,18 +16,81 @@ public class PacMan{
 
 	public ArrayList<Location> get_valid_moves() {
 		
-		return null;	
+		// not a wall
+		int x = this.myLoc.x;
+		int y = this.myLoc.y;
+		ArrayList<Location> rv = new ArrayList<Location>();
+
+		if ( !myMap.getLoc(new Location(x-1,y-1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x-1,y-1));
+		}
+		if ( !myMap.getLoc(new Location( x ,y-1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location( x ,y-1));
+		}
+		if ( !myMap.getLoc(new Location(x+1,y-1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x+1,y-1)); 
+		}
+		if ( !myMap.getLoc(new Location(x-1, y )).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x-1, y ));
+		}
+		if ( !myMap.getLoc(new Location(x+1, y )).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x+1, y ));
+		}
+		if ( !myMap.getLoc(new Location(x-1,y+1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x-1,y+1));
+		}
+		if ( !myMap.getLoc(new Location( x ,y+1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location( x ,y+1));
+		}
+		if ( !myMap.getLoc(new Location(x+1,y+1)).contains(Map.Type.WALL) ) {
+			rv.add(new Location(x+1,y+1));
+		}
+
+		return rv;		
 	}
 
+	/*TODO: Check if we need to call the map move function*/
 	public boolean move() {
-		return false;
+		ArrayList<Location> moveChoices = get_valid_moves();
+		if (moveChoices != null && !moveChoices.isEmpty()) {
+			// Move at random
+			int sz = moveChoices.size();
+			int rand = (int) Math.floor(Math.random() *(sz ));
+			
+			Location selected = moveChoices.get(rand);
+			
+			this.myLoc.shift(selected.x, selected.y);
+			
+			this.myMap.move(myName, selected, Map.Type.PACMAN);
+		
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public boolean is_ghost_in_range() { 
+		if( (myMap.getLoc(new Location(myLoc.x,myLoc.y)).contains(Map.Type.GHOST)) || 
+		(myMap.getLoc(new Location(myLoc.x-1,myLoc.y)).contains(Map.Type.GHOST)) ||
+		(myMap.getLoc(new Location(myLoc.x+1,myLoc.y)).contains(Map.Type.GHOST)) ||
+		(myMap.getLoc(new Location(myLoc.x-1,myLoc.y-1)).contains(Map.Type.GHOST)) ||
+		(myMap.getLoc(new Location(myLoc.x+1,myLoc.y-1)).contains(Map.Type.GHOST)) ||
+		(myMap.getLoc(new Location(myLoc.x,myLoc.y-1)).contains(Map.Type.GHOST)) ||
+		(myMap.getLoc(new Location(myLoc.x-1,myLoc.y+1)).contains(Map.Type.GHOST)) ||
+		(myMap.getLoc(new Location(myLoc.x+1,myLoc.y+1)).contains(Map.Type.GHOST)) ||
+		(myMap.getLoc(new Location(myLoc.x,myLoc.y+1)).contains(Map.Type.GHOST)) )
+			return true;
 		return false;
 	}
 
+	//This method checks to see if there is a 'power-cookie' located in Pacman's current coordinate. 
+	//If there is, this method calls the eatCookie method from the Map Class, 
+	//and returns the cookie component if the cookie a consumed, and null otherwise.
 	public JComponent consume() { 
+		if(myMap.getLoc(new Location(myLoc.x, myLoc.y)).contains(Map.Type.COOKIE)) {
+			return myMap.eatCookie(myName); 
+		}
  		return null;
 	}
 }
+
