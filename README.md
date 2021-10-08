@@ -9,7 +9,7 @@ Names: Greg Newbold, Liam Y Lehr, Seema Shaik
 <img width="292" alt="gameplay" src="https://user-images.githubusercontent.com/69174560/136595346-7378fb1c-3870-4dc5-97e6-f9c22d01fb79.PNG">
 
 
-Commands To Start The Game 
+**Commands To Start The Game:**
 
 javac -cp "src/" src/*.java
 
