@@ -61,7 +61,8 @@ public class Map{
 	
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		if (loc.x > dim || loc.y > dim){
+		if (loc.x > dim || loc.y > dim || loc.x == 0 || loc.y == 0){
+
 			return wallSet;
 		}
 		if (field.containsKey(loc)){
@@ -75,13 +76,56 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
+		if(Name == null || Name.length() == 0){
+			return false;
+		}
+		if(!((Name == "clyde") || (Name == "blinky") || (Name == "inky") || (Name == "pinky"))){
+			return false;
+		}
+		Location p1 = locations.get("pacman");
+		Location g1 = locations.get(Name);
+		if((Math.abs(p1.x-g1.x) <= 1) && (Math.abs(p1.y-g1.y) <= 1)){
+			components.remove("pacman");
+			locations.remove("pacman");
+			field.get(p1).remove(Map.Type.PACMAN);
+			return true;
+		} 
 		return false;
 	}
 	
 	public JComponent eatCookie(String name) {
+		JComponent comp = null;
+		if (name != null && name.equals("pacman")) {
+			String cookieLocStr = "tok_";
+			
+			// get location of pacman
+			Location pmLoc = locations.get(name);
+			// See if there is a cookie @ the current location
+			HashSet<Type> typesAtLoc = field.get(pmLoc);
+			System.out.println(field.get(pmLoc)); 
+//			for(Type t: typesAtLoc) {
+//				System.out.println(t);
+//			}
+//			System.out.println(typesAtLoc.toString());
+			// Check for existence
+			if(!typesAtLoc.contains(Type.COOKIE)) {
+				return null;
+			}
+			// Build String for update
+			String cookieID = cookieLocStr + "x" + pmLoc.x + "_y" + pmLoc.y;
+			// Remove the cookie from the set
+			typesAtLoc.remove(Type.COOKIE);
+			 //Update locations, components, field, and cookies
+			 field.put(pmLoc, typesAtLoc);
+			 comp = components.get(cookieID);
+			 components.remove(cookieID);
+			 locations.remove(cookieID);
+		}
+		return comp;
+		
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+		
 	}
+	
 }
