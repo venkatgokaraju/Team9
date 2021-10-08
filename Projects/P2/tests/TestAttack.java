@@ -46,5 +46,6 @@ public class TestAttack extends TestCase {
 	public void testAttack() throws FileNotFoundException{
 		assertTrue(result == true); 
 		assertTrue(result2 == false);
+
 	}
 }
