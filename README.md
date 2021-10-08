@@ -2,8 +2,10 @@
 
 Names: Greg Newbold, Liam Y Lehr
 
-[Insert Image Once working]
+
 <img width="290" alt="startmenu" src="https://user-images.githubusercontent.com/69174560/136595325-8ea13a3c-1f7d-4060-ab74-b982f735516e.PNG">
+
+
 <img width="292" alt="gameplay" src="https://user-images.githubusercontent.com/69174560/136595346-7378fb1c-3870-4dc5-97e6-f9c22d01fb79.PNG">
 
 
