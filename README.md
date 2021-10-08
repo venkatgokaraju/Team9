@@ -3,8 +3,13 @@
 Names: Greg Newbold, Liam Y Lehr
 
 [Insert Image Once working]
+<img width="290" alt="startmenu" src="https://user-images.githubusercontent.com/69174560/136595325-8ea13a3c-1f7d-4060-ab74-b982f735516e.PNG">
+<img width="292" alt="gameplay" src="https://user-images.githubusercontent.com/69174560/136595346-7378fb1c-3870-4dc5-97e6-f9c22d01fb79.PNG">
 
-[Insert Command Line Instructions Once Working]
+
+Commands To Start The Game 
+javac -cp "src/" src/*.java
+java -cp "src/" StartMenu  
 
 
 **PacMan - get_valid_moves() -> ArrayList<Location>:** This function returns a list of the neighboring locations to the PacMan object that do not have a Wall. This function will check for cells that are diagonal to the PacMan.
