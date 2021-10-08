@@ -10,7 +10,7 @@ public class TestGhostValidMoves extends TestCase {
 	boolean result4;
 	boolean result5;
 
-	protected void setUp() throws Exception {
+	protected void setUp() throws Exception  {
 		result1 = test1Setup();
 		result2 = test2Setup();
 		result3 = test3Setup();
