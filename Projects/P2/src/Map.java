@@ -59,8 +59,19 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		//wallSet and emptySet will help you write this method
-		return null;
+		if (loc.x > dim || loc.y > dim || loc.x == 0 || loc.y == 0){
+			return wallSet;
+		}
+		if (field.containsKey(loc)){
+			if (field.get(loc).size() > 0){
+				return field.get(loc);
+			} else{
+				return emptySet;
+			}
+		}
+		return emptySet;
+//		//wallSet and emptySet will help you write this method
+//		return null;
 	}
 
 	public boolean attack(String Name) {
@@ -70,13 +81,18 @@ public class Map{
 	
 	public JComponent eatCookie(String name) {
 		JComponent comp = null;
-		if (name != null && name.length() != 0) {
+		if (name != null && name.equals("pacman")) {
 			String cookieLocStr = "tok_";
 			
 			// get location of pacman
 			Location pmLoc = locations.get(name);
 			// See if there is a cookie @ the current location
 			HashSet<Type> typesAtLoc = field.get(pmLoc);
+			System.out.println(field.get(pmLoc)); 
+//			for(Type t: typesAtLoc) {
+//				System.out.println(t);
+//			}
+//			System.out.println(typesAtLoc.toString());
 			// Check for existence
 			if(!typesAtLoc.contains(Type.COOKIE)) {
 				return null;
