@@ -10,7 +10,9 @@ Names: Greg Newbold, Liam Y Lehr, Seema Shaik
 
 
 Commands To Start The Game 
+
 javac -cp "src/" src/*.java
+
 java -cp "src/" StartMenu  
 
 
