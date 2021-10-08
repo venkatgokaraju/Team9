@@ -129,7 +129,9 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-    if (loc.x > dim || loc.y > dim || loc.x == 0 || loc.y == 0){
+		//wallSet and emptySet will help you write this method
+		if (loc.x > dim || loc.y > dim || loc.x == 0 || loc.y == 0){
+
 			return wallSet;
 		}
 		if (field.containsKey(loc)){
