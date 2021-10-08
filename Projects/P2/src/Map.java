@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
-
+import java.util.ArrayList;
 public class Map{
 
 	public enum Type {
@@ -56,25 +56,6 @@ public class Map{
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
 		
-		/*
-		name of object, destination, type of named object
-
-		locations: name of object mapped to locations
-		components: name of object mapped to JComponent
-
-		use component to set the location
-		setLocation() in pacman/ghost Component classes
-
-		1) remove type from field at current location
-		2) add type to field at new location (passed in)
-
-		3) use component's setLocation() to set location to new location
-
-		4) remove name and location from locations hashmap
-		5) add name and locaiton to locations hashmap
-
-		*/
-
 		Location startLoc = locations.get(name);
 		if (type == Map.Type.PACMAN) {
 			PacMan p = new PacMan(name, startLoc, this);
@@ -98,6 +79,7 @@ public class Map{
 				// add (name, new location) pair to locations
 				locations.remove(name);
 				locations.put(name, loc);
+				p.move();
 				return true;
 			}
 		}
@@ -122,6 +104,7 @@ public class Map{
 				// add (name, new location) pair to locations
 				locations.remove(name);
 				locations.put(name, loc);
+				g.move();
 				return true;
 			}
 		}
@@ -148,15 +131,20 @@ public class Map{
 		if(Name == null || Name.length() == 0){
 			return false;
 		}
-		if(!((Name == "clyde") || (Name == "blinky") || (Name == "inky") || (Name == "pinky"))){
+		if(!((Name == "Clyde") || (Name == "Blinky") || (Name == "Inky") || (Name == "Pinky"))){
 			return false;
 		}
 		Location p1 = locations.get("pacman");
 		Location g1 = locations.get(Name);
 		if((Math.abs(p1.x-g1.x) <= 1) && (Math.abs(p1.y-g1.y) <= 1)){
-			components.remove("pacman");
+			components.get("pacman");
+			
+			
+
 			locations.remove("pacman");
+			
 			field.get(p1).remove(Map.Type.PACMAN);
+			gameOver = true;
 			return true;
 		} 
 		return false;
@@ -189,6 +177,7 @@ public class Map{
 			 comp = components.get(cookieID);
 			 components.remove(cookieID);
 			 locations.remove(cookieID);
+			cookies++;
 		}
 		return comp;
 		
