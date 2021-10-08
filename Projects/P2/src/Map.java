@@ -70,7 +70,6 @@ public class Map{
 	
 	public JComponent eatCookie(String name) {
 		JComponent comp = null;
-		if(getCookies() == 0) {return null;}
 		if (name != null && name.length() != 0) {
 			String cookieLocStr = "tok_";
 			
@@ -88,9 +87,9 @@ public class Map{
 			typesAtLoc.remove(Type.COOKIE);
 			 //Update locations, components, field, and cookies
 			 field.put(pmLoc, typesAtLoc);
+			 comp = components.get(cookieID);
 			 components.remove(cookieID);
 			 locations.remove(cookieID);
-			 cookies--;
 		}
 		return comp;
 		
