@@ -4,7 +4,7 @@ import java.io.*;
 
 public class TestMapMove extends TestCase {
 
-	public void testMapMove()  throws FileNotFoundException{
+	public void testMapMove() throws FileNotFoundException{
 
 	}
 }
