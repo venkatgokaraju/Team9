@@ -81,6 +81,5 @@ public class TestGhostMove extends TestCase {
 		for(int i = 0; i < 100; i++) {
 			testGhostMove3();
 		}
-				
 	}
 }
