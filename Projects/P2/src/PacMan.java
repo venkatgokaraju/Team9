@@ -47,20 +47,23 @@ public class PacMan{
 
 		return rv;	
 		
-//		return null;	
+		return null;	
 	}
 
-	/*TODO: check if we need to create getters for Location.java (x & y)*/
+	/*TODO: Check if we need to call the map move function*/
 	public boolean move() {
 		ArrayList<Location> moveChoices = get_valid_moves();
 		if (moveChoices != null && !moveChoices.isEmpty()) {
 			// Move at random
 			int sz = moveChoices.size();
-			int rand = (int) Math.floor(Math.random() *(sz + 1));
+			int rand = (int) Math.floor(Math.random() *(sz ));
 			
 			Location selected = moveChoices.get(rand);
+			System.out.println("Rand:" + rand);
 			
 			this.myLoc.shift(selected.x, selected.y);
+			
+//			Map.move(myName, selected, Map.Type.PACMAN);
 		
 			return true;
 		} else {
