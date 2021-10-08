@@ -37,3 +37,16 @@ java -cp "src/" StartMenu
 **Map - attack():** This method checks if the specified ghost can attack pacman. The ghost can attack pacman if pacman is 1 space left, right, above, below, or diagonal to the ghost. If the ghost can attack pacman return true, otherwise return false. 
 
 **TestMapAttack:** This method performs various tests on the attack() method in map class. It checks the cases where pacman is horizontal to a ghost and in range, vertical to a ghost and in range, and diagonal to a ghost and in range. It also tests the cases where the pacman is slightly out of range and the case where pacman is very out of range. These tests are performed for the case where there is only one ghost, and the case where there are multiple ghosts. 
+  
+**Consume():** This method checks to see if there is a cookie in pacman's current location and if there is, it will call the eat cookie method from the Map class and return a component or null otherwise. 
+
+**TestConsume:** This method creates a case where pacman and a cookie are in same location and calls consume to make sure null does not return for a sucessful case, and checks for a failed case where null is expected to return if there is no cookie at pacman's current location.
+  
+**attack():** This method checks to see if pacman is in range to attack using the in range method and calls attack from map class and returns true if attack is sucessful or false otherwise.
+
+**TestAttack:** This method tests the attack method. First it creates the ghost and pacman loactions (within range if attack) and adds them to the frame and calls attack to see if it returns true on a sucessful case and failed case.
+  
+**getLoc():** This method returns current location for a given argument such as Empty, Pacman, Cookie, Ghost or Wall.
+  
+**TestMapGetLoc:** This method creates locations for different types such as pacman, empty, cookie etc and calls the get loc method to see if it returns the correct type. 
+  
