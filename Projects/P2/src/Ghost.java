@@ -56,7 +56,7 @@ public class Ghost{
 			
 			Location selected = moveChoices.get(rand);
 			
-			this.myLoc.shift(selected.x, selected.y);
+			this.myLoc = selected; 
 			
 			this.myMap.move(this.myName, selected, Map.Type.GHOST);
 		

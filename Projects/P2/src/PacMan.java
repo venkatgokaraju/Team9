@@ -56,10 +56,10 @@ public class PacMan{
 			// Move at random
 			int sz = moveChoices.size();
 			int rand = (int) Math.floor(Math.random() *(sz ));
-			
+
 			Location selected = moveChoices.get(rand);
 			
-			this.myLoc.shift(selected.x, selected.y);
+			this.myLoc = selected; 
 			
 			this.myMap.move(myName, selected, Map.Type.PACMAN);
 		

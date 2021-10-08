@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
-
+import java.util.ArrayList;
 public class Map{
 
 	public enum Type {
@@ -79,6 +79,7 @@ public class Map{
 				// add (name, new location) pair to locations
 				locations.remove(name);
 				locations.put(name, loc);
+				p.move();
 				return true;
 			}
 		}
@@ -103,6 +104,7 @@ public class Map{
 				// add (name, new location) pair to locations
 				locations.remove(name);
 				locations.put(name, loc);
+				g.move();
 				return true;
 			}
 		}
@@ -129,15 +131,20 @@ public class Map{
 		if(Name == null || Name.length() == 0){
 			return false;
 		}
-		if(!((Name == "clyde") || (Name == "blinky") || (Name == "inky") || (Name == "pinky"))){
+		if(!((Name == "Clyde") || (Name == "Blinky") || (Name == "Inky") || (Name == "Pinky"))){
 			return false;
 		}
 		Location p1 = locations.get("pacman");
 		Location g1 = locations.get(Name);
 		if((Math.abs(p1.x-g1.x) <= 1) && (Math.abs(p1.y-g1.y) <= 1)){
-			components.remove("pacman");
+			components.get("pacman");
+			
+			
+
 			locations.remove("pacman");
+			
 			field.get(p1).remove(Map.Type.PACMAN);
+			gameOver = true;
 			return true;
 		} 
 		return false;
@@ -170,6 +177,7 @@ public class Map{
 			 comp = components.get(cookieID);
 			 components.remove(cookieID);
 			 locations.remove(cookieID);
+			cookies++;
 		}
 		return comp;
 		
