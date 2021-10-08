@@ -1,6 +1,6 @@
 # PacMan 
 
-Names: Greg Newbold, Liam Y Lehr, Seema Shaik
+Names: Greg Newbold, Liam Y Lehr, Seema Shaik, Kwesi Owubah
 
 
 <img width="290" alt="startmenu" src="https://user-images.githubusercontent.com/69174560/136595325-8ea13a3c-1f7d-4060-ab74-b982f735516e.PNG">
