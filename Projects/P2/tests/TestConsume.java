@@ -22,5 +22,6 @@ public class TestConsume extends TestCase {
 		assertNotNull(pacman1.consume());
 		assertNull(pacman2.consume());
 		assertNull(fakePacman.consume()); 
+
 	}
 }

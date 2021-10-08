@@ -15,12 +15,27 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		
 		return null;	
 	}
 
+	/*TODO: Check if we need to call the map move function*/
 	public boolean move() {
-		return false;
+		ArrayList<Location> moveChoices = get_valid_moves();
+		if (moveChoices != null && !moveChoices.isEmpty()) {
+			// Move at random
+			int sz = moveChoices.size();
+			int rand = (int) Math.floor(Math.random() *(sz ));
+			
+			Location selected = moveChoices.get(rand);
+			
+			this.myLoc.shift(selected.x, selected.y);
+			
+			this.myMap.move(myName, selected, Map.Type.PACMAN);
+		
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public boolean is_ghost_in_range() { 
@@ -36,4 +51,5 @@ public class PacMan{
 		}
  		return null;
 	}
-}
+ }
+
