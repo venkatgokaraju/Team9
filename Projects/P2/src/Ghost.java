@@ -12,7 +12,7 @@ public class Ghost{
 		this.myMap = map;
 	}
 
-	public ArrayList<Location> get_valid_moves() {
+	public ArrayList<Location> get_valid_moves() {	
 		return null;
 	}
 
@@ -21,11 +21,13 @@ public class Ghost{
 		if (moveChoices != null && !moveChoices.isEmpty()) {
 			// Move at random
 			int sz = moveChoices.size();
-			int rand = (int) Math.floor(Math.random() *(sz + 1));
+			int rand = (int) Math.floor(Math.random() *(sz ));
 			
 			Location selected = moveChoices.get(rand);
 			
 			this.myLoc.shift(selected.x, selected.y);
+			
+			this.myMap.move(this.myName, selected, Map.Type.GHOST);
 		
 			return true;
 		} else {
