@@ -26,7 +26,6 @@ public class TestPacManMove extends TestCase {
 		for(int i = 0; i < 100; i++) {
 			testPacManMove();
 		}
-		
 	}
 	
 	public void testPacManMove3() throws FileNotFoundException {
@@ -84,9 +83,5 @@ public class TestPacManMove extends TestCase {
 		for(int i = 0; i < 100; i++) {
 			testPacManMove3();
 		}
-				
-	}
-	
-	
-	
+  }
 }

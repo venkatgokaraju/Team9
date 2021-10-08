@@ -45,4 +45,5 @@ public class PacMan{
 	public JComponent consume() { 
  		return null;
 	}
-}
+ }
+
