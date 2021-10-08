@@ -31,7 +31,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	private JButton close;
 	private Map myMap;
 	public int scale = 20;
-	public int dim = 8;
+	public int dim = 30;
 	private int score = 0;
 		
 	private boolean continueGame = true;
