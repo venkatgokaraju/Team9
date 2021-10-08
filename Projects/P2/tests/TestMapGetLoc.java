@@ -4,7 +4,6 @@ import java.io.*;
 
 
 public class TestMapGetLoc extends TestCase {
-	
 	public void testMapGetLoc() throws FileNotFoundException {
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
@@ -41,5 +40,6 @@ public class TestMapGetLoc extends TestCase {
 		System.out.println(map2.getLoc(g2)); // [GHOST]
 		System.out.println(map2.getLoc(e2)); // [WALL]
 		System.out.println(map2.getLoc(c2)); // [COOKIE]
+
 	}
 }
