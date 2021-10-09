@@ -21,6 +21,10 @@ java -cp "src/" StartMenu
   
 **TestPacManValidMoves:** This test class tests the get_valid_moves() function in the PacMan.java class. It checks that the function does not return locations with walls and does return all other region types.
   
+**Pacman- move():** This function relies on the PacMan’s class get_valid_moves() function to return a list of feasible locations Pacman can move to. A random integer generator, bounded by the size of the list of valid moves, selects a number. This number is used to retrieve a location, which is further used to update Pacman’s location through the instance variables and map passed in upon construction. Returns true if successful, and false otherwise.
+
+**TestPacmanMove():** Test1 places Pacman in a position where it can move to another location. After the move() function is called, the test makes sure that the correct return value is given. Due to the non-deterministic aspect of the move function (random integer), Test2 runs test1 with 100 iterations. Test3 is the same as Test1, the difference is that walls are placed around Pacman so that it is unable to move. Test4 is the same as Test2, the difference is that Test3 is being run instead of Test1.
+  
 **PacMan - is_ghost_in_range():** This function return true if there is a ghost in range of PacMan and false otherwise. A ghost being in range means that there is either a ghost one space to the left, right, below, above, or diagonal to pacman.
 
 **TestGhostInRange:** This Junit teste class tests various cases regarding the is_ghost_in_range() method. It checks the cases where a ghost is horizontal to pacman and in range, vertical to pacman and in range, and diagonal to pacman and in range. It also tests the cases where the ghost is slightly out of range and the case where the ghost is very out of range 
@@ -28,6 +32,10 @@ java -cp "src/" StartMenu
 **Ghost - get_valid_moves() -> ArrayList<Location>:** This function returns a list of the neighboring locations to a Ghost object that do not have a Wall. This function will check for cells that are diagonal to the Ghost.
   
 **TestPacManValidMoves:** This test class tests the get_valid_moves() function in the Ghost.java class. It checks that the function does not return locations with walls and does return all other region types.
+  
+**Ghost- move():** This function relies on the Ghost’s class get_valid_moves() function to return a list of feasible locations a Ghost can move to. A random integer generator, bounded by the size of the list of valid moves, selects a number. This number is used to retrieve a location, which is further used to update a ghost’s location through the instance variables and map passed in upon construction. Returns true if successful, and false otherwise.
+
+**TestGhostMove():**  Test1 places the ghost in a position where it can move to another location. After the move() function is called, the test makes sure that the correct return value is given. Due to the non-deterministic aspect of the move function (random integer), Test2 runs test1 with 100 iterations. Test3 is the same as Test1, the difference is that walls are placed around the ghost so that it is unable to move. Test4 is the same as Test2, the difference is that Test3 is being run instead of Test1.
  
 **Ghost - is_pacman_in_range():** This function return true if pacman is in range of the specified ghosts coordinates, and false otherwise. A ghost being in range means that pacman is either one space to the left, right, below, above, or diagonal to the specified ghost's coordinates.
 
@@ -53,3 +61,8 @@ java -cp "src/" StartMenu
   
 **TestMapGetLoc:** This method creates locations for different types such as pacman, empty, cookie etc and calls the get loc method to see if it returns the correct type. 
   
+**Map- eatCookie():** This function retrieves the location of Pacman and determines if there is a cookie in the same location. If there is a cookie at the location, then the map and score count are updated to reflect Pacman eating the cookie. If the action was successful, then the JComponenet of the cookie is returned, else null is returned. 
+
+**TestMapEatCookie():**  Test1 tests to make sure that if Pacman and a cookie are in the same location, the program runs smoothly. Meaning, the map reflects the appearance of both Types [PACMAN, COOKIE] and the removal of the cookie after it is eaten. In addition, the return values are tested. Tests 2 and 3 tests for malformatted parameters passed in and the correct return value.
+
+
