@@ -2,6 +2,7 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
+
 public class TestGhostMove extends TestCase {
 
 	/*copy ghost-isvalid moves and map getLoc*/
