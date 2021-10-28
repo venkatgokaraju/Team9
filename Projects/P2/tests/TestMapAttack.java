@@ -48,12 +48,12 @@ public class TestMapAttack extends TestCase {
 		Location g3 = new Location(14,14);
 		Location g4 = new Location(13,13);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
-		frame1.addGhost(g2, "blinky", Color.red);
-		frame1.addGhost(g3, "pinky", Color.red);
-		frame1.addGhost(g4, "inky", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
+		frame1.addGhost(g2, "Blinky", Color.red);
+		frame1.addGhost(g3, "Pinky", Color.red);
+		frame1.addGhost(g4, "Inky", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 
 	public static boolean test2Setup() throws Exception{
@@ -64,111 +64,111 @@ public class TestMapAttack extends TestCase {
 		Location g3 = new Location(14,14);
 		Location g4 = new Location(13,13);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
-		frame1.addGhost(g2, "blinky", Color.red);
-		frame1.addGhost(g3, "pinky", Color.red);
-		frame1.addGhost(g4, "inky", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
+		frame1.addGhost(g2, "Blinky", Color.red);
+		frame1.addGhost(g3, "Pinky", Color.red);
+		frame1.addGhost(g4, "Inky", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test3Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(9,9);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test4Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(9,10);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test5Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(10,9);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test6Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(11,9);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test7Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(11,10);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test8Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(10,11);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test9Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(11,8);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test10Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(31,30);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test11Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(8,11);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test12Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(0,11);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test13Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
 		Location p1 = new Location(10,10);
 		Location g1 = new Location(30,30);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("clyde");
+		return map1.attack("Clyde");
 	}
 	public static boolean test14Setup() throws Exception{
 		NoFrame frame1 = new NoFrame();
@@ -178,10 +178,10 @@ public class TestMapAttack extends TestCase {
 		Location g3 = new Location(14,14);
 		Location g4 = new Location(13,13);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
-		frame1.addGhost(g2, "blinky", Color.red);
-		frame1.addGhost(g3, "pinky", Color.red);
-		frame1.addGhost(g4, "inky", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
+		frame1.addGhost(g2, "Blinky", Color.red);
+		frame1.addGhost(g3, "Pinky", Color.red);
+		frame1.addGhost(g4, "Inky", Color.red);
 		Map map1 = frame1.getMap();
 		return map1.attack("blinky");
 	}
@@ -193,10 +193,10 @@ public class TestMapAttack extends TestCase {
 		Location g3 = new Location(14,14);
 		Location g4 = new Location(13,13);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
-		frame1.addGhost(g2, "blinky", Color.red);
-		frame1.addGhost(g3, "pinky", Color.red);
-		frame1.addGhost(g4, "inky", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
+		frame1.addGhost(g2, "Blinky", Color.red);
+		frame1.addGhost(g3, "Pinky", Color.red);
+		frame1.addGhost(g4, "Inky", Color.red);
 		Map map1 = frame1.getMap();
 		return map1.attack("pinky");
 	}
@@ -208,12 +208,12 @@ public class TestMapAttack extends TestCase {
 		Location g3 = new Location(14,14);
 		Location g4 = new Location(13,13);
 		frame1.addPacMan(p1);
-		frame1.addGhost(g1, "clyde", Color.red);
-		frame1.addGhost(g2, "blinky", Color.red);
-		frame1.addGhost(g3, "pinky", Color.red);
-		frame1.addGhost(g4, "inky", Color.red);
+		frame1.addGhost(g1, "Clyde", Color.red);
+		frame1.addGhost(g2, "Blinky", Color.red);
+		frame1.addGhost(g3, "Pinky", Color.red);
+		frame1.addGhost(g4, "Inky", Color.red);
 		Map map1 = frame1.getMap();
-		return map1.attack("inky");
+		return map1.attack("Inky");
 	}
 
 	public void testMapAttack1() throws FileNotFoundException{
