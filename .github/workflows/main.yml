@@ -28,35 +28,35 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-  TestGhostInRange:
+  TestGhostValidMoves:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
       - uses: actions/checkout@v2
-      - name: TestGhostInRange
+      - name: TestGhostValidMoves
         run: |
           cd Projects/P2/ 
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostInRange.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestGhostValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
 
-  TestPacManInRange:
+  TestPacManValidMoves:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
       - uses: actions/checkout@v2
-      - name: TestPacManInRange
+      - name: TestPacManValidMoves
         run: |
           cd Projects/P2/ 
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManInRange.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestPacManValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
 
-  TestMapAttack:
+  TestMapMove:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
       - uses: actions/checkout@v2
-      - name: TestMapAttack
+      - name: TestMapMove
         run: |
           cd Projects/P2/ 
-          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapAttack.java
-          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/TestMapMove.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
