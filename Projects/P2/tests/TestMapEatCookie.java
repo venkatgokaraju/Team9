@@ -9,8 +9,9 @@ import java.util.HashSet;
 public class TestMapEatCookie extends TestCase{
 	
 	public void testMapEatCookie() throws FileNotFoundException {
-		MainFrame frame = new MainFrame();
-		
+//		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
+
 		Location locationPacman = new Location(1, 5);
 		
 		Map grid = frame.getMap();
@@ -31,7 +32,8 @@ public class TestMapEatCookie extends TestCase{
 	}
 	
 	public void testMapEatCookie2() throws FileNotFoundException {
-		MainFrame frame = new MainFrame();
+//		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		
 		Location locationPacman = new Location(1, 5);
 		
@@ -43,8 +45,9 @@ public class TestMapEatCookie extends TestCase{
 
 	}
 	public void testMapEatCookie3() throws FileNotFoundException {
-		MainFrame frame = new MainFrame();
-		
+//		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
+
 		Location locationPacman = new Location(1, 5);
 		
 		Map grid = frame.getMap();
