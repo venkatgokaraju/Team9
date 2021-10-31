@@ -23,7 +23,7 @@ public class TestMapGetLoc extends TestCase {
 		System.out.println(map1.getLoc(e1)); // [EMPTY]
 		System.out.println(map1.getLoc(c1)); // [COOKIE]
 
-		MainFrame frame2 = new MainFrame();
+		NoFrame frame2 = new NoFrame();
 		Location p2 = new Location(10,10); //pacman
 		Location g2 = new Location(11,11); //ghost
 		Location c2 = new Location(1,1); //if col is 1 its cookie location 

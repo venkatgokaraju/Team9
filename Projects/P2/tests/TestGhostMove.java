@@ -2,11 +2,14 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 
+
 public class TestGhostMove extends TestCase {
 
 	/*copy ghost-isvalid moves and map getLoc*/
 	public void testGhostMove() throws FileNotFoundException {
-		MainFrame frame = new MainFrame();
+//		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
+
 		Location locationGhost = new Location(10, 10);
 		
 		Map grid = frame.getMap();
@@ -47,7 +50,9 @@ public class TestGhostMove extends TestCase {
 		Location locationWall8 = new Location(6,6);
 
 				
-		MainFrame frame = new MainFrame();
+//		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
+
 		Location locationGhost = new Location(5, 5);
 		
 		Map grid = frame.getMap();
