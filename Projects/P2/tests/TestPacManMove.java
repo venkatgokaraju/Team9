@@ -9,12 +9,13 @@ public class TestPacManMove extends TestCase {
 	
 	/*copy pacman-isvalid moves and map getLoc*/
 	public void testPacManMove() throws FileNotFoundException {
-		MainFrame frame = new MainFrame();
+//		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		Location locationPacman = new Location(10, 10);
 		
 		Map grid = frame.getMap();
 		
-		PacMan pacman = new PacMan("PM", locationPacman, grid);
+		PacMan pacman = new PacMan("pacman", locationPacman, grid);
 		frame.addPacMan(locationPacman);
 		
 		assertTrue(pacman.move());
@@ -49,7 +50,8 @@ public class TestPacManMove extends TestCase {
 		Location locationWall8 = new Location(6,6);
 
 				
-		MainFrame frame = new MainFrame();
+//		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		Location locationPacman = new Location(5, 5);
 		
 		Map grid = frame.getMap();
@@ -71,7 +73,7 @@ public class TestPacManMove extends TestCase {
 		wall7.setLocation(5,6);
 		wall8.setLocation(6,6);
 
-		PacMan pacman = new PacMan("PM", locationPacman, grid);
+		PacMan pacman = new PacMan("pacman", locationPacman, grid);
 		frame.addPacMan(locationPacman);
 
 		assertFalse(pacman.move());

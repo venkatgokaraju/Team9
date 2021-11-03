@@ -4,7 +4,7 @@ import java.io.*;
 
 public class TestPacManValidMoves extends TestCase {
 
-	public void testPacManValidMoves() throws FileNotFoundException{
+	// public void testPacManValidMoves() throws FileNotFoundException{
 
 		boolean result1;
 		boolean result2;
@@ -168,5 +168,5 @@ public class TestPacManValidMoves extends TestCase {
 		public void testPacManValidMoves5() throws FileNotFoundException{
 			assertFalse( result5 );
 		}
-	}
+	// }
 }
