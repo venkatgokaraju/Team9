@@ -44,6 +44,9 @@ public class Ghost{
 		if ( !myMap.getLoc(new Location(x+1,y+1)).contains(Map.Type.WALL) ) {
 			rv.add(new Location(x+1,y+1));
 		}
+
+		rv = new ArrayList<Location>();
+		
 		return rv;	
 	}
 
