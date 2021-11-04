@@ -114,17 +114,13 @@ public class Map{
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
 		if (loc.x > dim || loc.y > dim || loc.x == 0 || loc.y == 0){
-
 			return wallSet;
 		}
-		if (field.containsKey(loc)){
 			if (field.get(loc).size() > 0){
 				return field.get(loc);
 			} else{
 				return emptySet;
 			}
-		}
-		return emptySet;
 	}
 
 	public boolean attack(String Name) {
