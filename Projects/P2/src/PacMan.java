@@ -90,10 +90,7 @@ public class PacMan{
 	//If there is, this method calls the eatCookie method from the Map Class, 
 	//and returns the cookie component if the cookie a consumed, and null otherwise.
 	public JComponent consume() { 
-		if(myMap.getLoc(new Location(myLoc.x, myLoc.y)).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie(myName); 
-		}
- 		return null;
 	}
 }
 
