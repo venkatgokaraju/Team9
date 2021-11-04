@@ -64,9 +64,9 @@ public class Ghost{
 			
 			this.myMap.move(this.myName, selected, Map.Type.GHOST);
 		
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 
