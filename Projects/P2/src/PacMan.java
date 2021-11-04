@@ -46,8 +46,9 @@ public class PacMan{
 			rv.add(new Location(x+1,y+1));
 		}
 
-		rv = new ArrayList<Location>();
-		
+		for (Location loc : rv)
+			rv.remove(loc);
+
 		return rv;		
 	}
 
