@@ -152,34 +152,26 @@ public class Map{
 	
 	public JComponent eatCookie(String name) {
 		JComponent comp = null;
-		if (name != null && name.equals("pacman")) {
-			String cookieLocStr = "tok_";
+		String cookieLocStr = "tok_";
+		// get location of pacman
+		Location pmLoc = locations.get(name);
+		// See if there is a cookie @ the current location
+		HashSet<Type> typesAtLoc = field.get(pmLoc);
 			
-			// get location of pacman
-			Location pmLoc = locations.get(name);
-			// See if there is a cookie @ the current location
-			HashSet<Type> typesAtLoc = field.get(pmLoc);
-			System.out.println(field.get(pmLoc)); 
-//			for(Type t: typesAtLoc) {
-//				System.out.println(t);
-//			}
-//			System.out.println(typesAtLoc.toString());
-			// Check for existence
-			if(!typesAtLoc.contains(Type.COOKIE)) {
-				return null;
-			}
-			// Build String for update
-			String cookieID = cookieLocStr + "x" + pmLoc.x + "_y" + pmLoc.y;
-			// Remove the cookie from the set
-			typesAtLoc.remove(Type.COOKIE);
-			 //Update locations, components, field, and cookies
-			 field.put(pmLoc, typesAtLoc);
-			 comp = components.get(cookieID);
-			 components.remove(cookieID);
-			 locations.remove(cookieID);
-			cookies++;
+		if(!typesAtLoc.contains(Type.COOKIE)) {
+			return null;
 		}
-		return comp;
+		// Build String for update
+		String cookieID = cookieLocStr + "x" + pmLoc.x + "_y" + pmLoc.y;
+		// Remove the cookie from the set
+//		typesAtLoc.remove(Type.COOKIE);
+		//Update locations, components, field, and cookies
+		field.put(pmLoc, typesAtLoc);
+		comp = components.get(cookieID);
+		components.remove(cookieID);
+		locations.remove(cookieID);
+		cookies++;
+		return null;
 		
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
