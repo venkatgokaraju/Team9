@@ -76,8 +76,8 @@ public class Ghost{
 		(myMap.getLoc(new Location(myLoc.x-1,myLoc.y+1)).contains(Map.Type.PACMAN)) ||
 		(myMap.getLoc(new Location(myLoc.x+1,myLoc.y+1)).contains(Map.Type.PACMAN)) ||
 		(myMap.getLoc(new Location(myLoc.x,myLoc.y+1)).contains(Map.Type.PACMAN)) )
-			return true;
-		return false;
+			return false;
+		return true;
 	}
 
 	public boolean attack() {

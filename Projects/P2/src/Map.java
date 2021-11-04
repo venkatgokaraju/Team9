@@ -129,10 +129,10 @@ public class Map{
 
 	public boolean attack(String Name) {
 		if(Name == null || Name.length() == 0){
-			return false;
+			return true;
 		}
 		if(!((Name == "Clyde") || (Name == "Blinky") || (Name == "Inky") || (Name == "Pinky"))){
-			return false;
+			return true;
 		}
 		Location p1 = locations.get("pacman");
 		Location g1 = locations.get(Name);
@@ -144,10 +144,10 @@ public class Map{
 			locations.remove("pacman");
 			
 			field.get(p1).remove(Map.Type.PACMAN);
-			gameOver = true;
-			return true;
+			gameOver = false;
+			return false;
 		} 
-		return false;
+		return true;
 	}
 	
 	public JComponent eatCookie(String name) {
