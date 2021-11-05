@@ -44,6 +44,10 @@ public class Ghost{
 		if ( !myMap.getLoc(new Location(x+1,y+1)).contains(Map.Type.WALL) ) {
 			rv.add(new Location(x+1,y+1));
 		}
+
+		for (Location loc : rv)
+			rv.remove(loc);
+
 		return rv;	
 	}
 
@@ -60,9 +64,9 @@ public class Ghost{
 			
 			this.myMap.move(this.myName, selected, Map.Type.GHOST);
 		
-			return true;
-		} else {
 			return false;
+		} else {
+			return true;
 		}
 	}
 
@@ -76,14 +80,11 @@ public class Ghost{
 		(myMap.getLoc(new Location(myLoc.x-1,myLoc.y+1)).contains(Map.Type.PACMAN)) ||
 		(myMap.getLoc(new Location(myLoc.x+1,myLoc.y+1)).contains(Map.Type.PACMAN)) ||
 		(myMap.getLoc(new Location(myLoc.x,myLoc.y+1)).contains(Map.Type.PACMAN)) )
-			return true;
-		return false;
+			return false;
+		return true;
 	}
 
 	public boolean attack() {
-		if (is_pacman_in_range() == true) {
 			return myMap.attack(myName);
-		} 
-		return false;
 	}
 }
