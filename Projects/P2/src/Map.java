@@ -80,7 +80,7 @@ public class Map{
 				locations.remove(name);
 				locations.put(name, loc);
 				p.move();
-				return false;
+				return true;
 			}
 		}
 		else if (type == Map.Type.GHOST) {
@@ -105,10 +105,10 @@ public class Map{
 				locations.remove(name);
 				locations.put(name, loc);
 				g.move();
-				return false;
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
@@ -116,19 +116,22 @@ public class Map{
 		if (loc.x > dim || loc.y > dim || loc.x == 0 || loc.y == 0){
 			return wallSet;
 		}
+		if (field.containsKey(loc)){
 			if (field.get(loc).size() > 0){
 				return field.get(loc);
 			} else{
 				return emptySet;
 			}
+		}
+		return emptySet;
 	}
 
 	public boolean attack(String Name) {
 		if(Name == null || Name.length() == 0){
-			return true;
+			return false;
 		}
 		if(!((Name == "Clyde") || (Name == "Blinky") || (Name == "Inky") || (Name == "Pinky"))){
-			return true;
+			return false;
 		}
 		Location p1 = locations.get("pacman");
 		Location g1 = locations.get(Name);
@@ -140,34 +143,36 @@ public class Map{
 			locations.remove("pacman");
 			
 			field.get(p1).remove(Map.Type.PACMAN);
-			gameOver = false;
-			return false;
+			gameOver = true;
+			return true;
 		} 
-		return true;
+		return false;
 	}
 	
 	public JComponent eatCookie(String name) {
 		JComponent comp = null;
-		String cookieLocStr = "tok_";
-		// get location of pacman
-		Location pmLoc = locations.get(name);
-		// See if there is a cookie @ the current location
-		HashSet<Type> typesAtLoc = field.get(pmLoc);
-			
-		if(!typesAtLoc.contains(Type.COOKIE)) {
-			return null;
+		if (name != null && name.equals("pacman")) {
+			String cookieLocStr = "tok_";
+			// get location of pacman
+			Location pmLoc = locations.get(name);
+			// See if there is a cookie @ the current location
+			HashSet<Type> typesAtLoc = field.get(pmLoc);
+
+			if(!typesAtLoc.contains(Type.COOKIE)) {
+				return null;
+			}
+			// Build String for update
+			String cookieID = cookieLocStr + "x" + pmLoc.x + "_y" + pmLoc.y;
+			// Remove the cookie from the set
+			typesAtLoc.remove(Type.COOKIE);
+			//Update locations, components, field, and cookies
+			field.put(pmLoc, typesAtLoc);
+			comp = components.get(cookieID);
+			components.remove(cookieID);
+			locations.remove(cookieID);
+			cookies++;
 		}
-		// Build String for update
-		String cookieID = cookieLocStr + "x" + pmLoc.x + "_y" + pmLoc.y;
-		// Remove the cookie from the set
-//		typesAtLoc.remove(Type.COOKIE);
-		//Update locations, components, field, and cookies
-		field.put(pmLoc, typesAtLoc);
-		comp = components.get(cookieID);
-		components.remove(cookieID);
-		locations.remove(cookieID);
-		cookies++;
-		return null;
+		return comp;
 		
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1

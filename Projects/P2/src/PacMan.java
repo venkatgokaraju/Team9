@@ -46,10 +46,7 @@ public class PacMan{
 			rv.add(new Location(x+1,y+1));
 		}
 
-		for (Location loc : rv)
-			rv.remove(loc);
-
-		return rv;		
+		return rv;	
 	}
 
 	/*TODO: Check if we need to call the map move function*/
@@ -66,9 +63,9 @@ public class PacMan{
 			
 			this.myMap.move(myName, selected, Map.Type.PACMAN);
 		
-			return false;
-		} else {
 			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -82,15 +79,18 @@ public class PacMan{
 		(myMap.getLoc(new Location(myLoc.x-1,myLoc.y+1)).contains(Map.Type.GHOST)) ||
 		(myMap.getLoc(new Location(myLoc.x+1,myLoc.y+1)).contains(Map.Type.GHOST)) ||
 		(myMap.getLoc(new Location(myLoc.x,myLoc.y+1)).contains(Map.Type.GHOST)) )
-			return false;
-		return true;
+			return true;
+		return false;
 	}
 
 	//This method checks to see if there is a 'power-cookie' located in Pacman's current coordinate. 
 	//If there is, this method calls the eatCookie method from the Map Class, 
 	//and returns the cookie component if the cookie a consumed, and null otherwise.
 	public JComponent consume() { 
+		if(myMap.getLoc(new Location(myLoc.x, myLoc.y)).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie(myName); 
+		}
+		return null;
 	}
 }
 

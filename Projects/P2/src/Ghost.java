@@ -14,7 +14,6 @@ public class Ghost{
 
 
 	public ArrayList<Location> get_valid_moves() {
-
 		// not a wall
 		int x = this.myLoc.x;
 		int y = this.myLoc.y;
@@ -44,11 +43,7 @@ public class Ghost{
 		if ( !myMap.getLoc(new Location(x+1,y+1)).contains(Map.Type.WALL) ) {
 			rv.add(new Location(x+1,y+1));
 		}
-
-		for (Location loc : rv)
-			rv.remove(loc);
-
-		return rv;	
+		return rv;		
 	}
 
 	public boolean move() {
@@ -64,9 +59,9 @@ public class Ghost{
 			
 			this.myMap.move(this.myName, selected, Map.Type.GHOST);
 		
-			return false;
-		} else {
 			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -80,11 +75,14 @@ public class Ghost{
 		(myMap.getLoc(new Location(myLoc.x-1,myLoc.y+1)).contains(Map.Type.PACMAN)) ||
 		(myMap.getLoc(new Location(myLoc.x+1,myLoc.y+1)).contains(Map.Type.PACMAN)) ||
 		(myMap.getLoc(new Location(myLoc.x,myLoc.y+1)).contains(Map.Type.PACMAN)) )
-			return false;
-		return true;
+			return true;
+		return false;
 	}
 
 	public boolean attack() {
+		if (is_pacman_in_range() == true) {
 			return myMap.attack(myName);
+		}
+		return false;
 	}
 }
