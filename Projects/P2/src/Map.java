@@ -80,7 +80,7 @@ public class Map{
 				locations.remove(name);
 				locations.put(name, loc);
 				p.move();
-				return false;
+				return true;
 			}
 		}
 		else if (type == Map.Type.GHOST) {
@@ -105,10 +105,10 @@ public class Map{
 				locations.remove(name);
 				locations.put(name, loc);
 				g.move();
-				return false;
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
