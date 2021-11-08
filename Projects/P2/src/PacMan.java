@@ -46,10 +46,7 @@ public class PacMan{
 			rv.add(new Location(x+1,y+1));
 		}
 
-		for (Location loc : rv)
-			rv.remove(loc);
-
-		return rv;		
+		return rv;	
 	}
 
 	/*TODO: Check if we need to call the map move function*/

@@ -14,7 +14,6 @@ public class Ghost{
 
 
 	public ArrayList<Location> get_valid_moves() {
-
 		// not a wall
 		int x = this.myLoc.x;
 		int y = this.myLoc.y;
@@ -44,11 +43,7 @@ public class Ghost{
 		if ( !myMap.getLoc(new Location(x+1,y+1)).contains(Map.Type.WALL) ) {
 			rv.add(new Location(x+1,y+1));
 		}
-
-		for (Location loc : rv)
-			rv.remove(loc);
-
-		return rv;	
+		return rv;		
 	}
 
 	public boolean move() {
