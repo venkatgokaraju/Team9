@@ -116,11 +116,14 @@ public class Map{
 		if (loc.x > dim || loc.y > dim || loc.x == 0 || loc.y == 0){
 			return wallSet;
 		}
+		if (field.containsKey(loc)){
 			if (field.get(loc).size() > 0){
 				return field.get(loc);
 			} else{
 				return emptySet;
 			}
+		}
+		return emptySet;
 	}
 
 	public boolean attack(String Name) {
