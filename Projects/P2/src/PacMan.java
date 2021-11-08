@@ -82,8 +82,8 @@ public class PacMan{
 		(myMap.getLoc(new Location(myLoc.x-1,myLoc.y+1)).contains(Map.Type.GHOST)) ||
 		(myMap.getLoc(new Location(myLoc.x+1,myLoc.y+1)).contains(Map.Type.GHOST)) ||
 		(myMap.getLoc(new Location(myLoc.x,myLoc.y+1)).contains(Map.Type.GHOST)) )
-			return false;
-		return true;
+			return true;
+		return false;
 	}
 
 	//This method checks to see if there is a 'power-cookie' located in Pacman's current coordinate. 
